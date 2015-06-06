@@ -24,8 +24,14 @@
     <div class="col-lg-6 well">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= recipe.summary %></p>
+      
+    <% if recipe.styles.any? %>
       <p><small>Styles: <%= render recipe.styles %></small></p>
+    <% end %>
+    <% if recipe.ingredients.any? %>
       <p><small>Ingrediets: <%= render recipe.ingredients %></small></p>
+    <% end %>  
+      
       <p>
         <span class="quiet"><small>created: <%= time_ago_in_words(recipe.created_at) %> ago,</small></span>
         
