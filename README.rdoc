@@ -45,3 +45,16 @@ Authentication updates:
 5. like - update to current_user
 6. Before_action :require_user, except: [:show, :index]
 7. Before_action :require_same_user for chefs, only: [:edit, :update]
+
+BUILDING COMMENT SECTION:
+1. Migration to create reviews table, body, type = text_field, two foreign keys, refernce chef_id, reference recipe_id
+2. need to build Review model
+3. need to create tests for the spec, add validations to the review model
+4. build the associations, has_many and belongs_to
+5. test the associations in rails console
+-recipe.reviews
+-chef.reviews
+6. Create routes
+7. only authenticated chefs can create reviews, before_action require_user
+8. associate a chef_id and recipe_id 
+9. use existing code if possible. (description for text box)
